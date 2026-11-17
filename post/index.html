@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="de-CH">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <!-- Sperrseite: Nur sie und die verschlüsselte Datei inhalt.bin liegen auf dem Server. Kein Text der App, keine Regeln,
+       keine Vorlagen. Erst nach dem richtigen Passwort entsteht auf dem Gerät die App (start.html). -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; worker-src 'self'; manifest-src 'self'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#F6EFE6">
+  <title>Bürokram</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="symbol/symbol-192.png">
+  <link rel="apple-touch-icon" href="symbol/symbol-192.png">
+  <link rel="stylesheet" href="zugang.css">
+  <script src="zugang.js" defer></script>
+</head>
+<body>
+  <main id="zugang" class="zugang" hidden>
+    <div class="zugang-kopf">
+      <img src="symbol/symbol-192.png" alt="" width="72" height="72">
+      <h1>Bürokram</h1>
+      <p id="zugang-hinweis">Testfassung. Bitte das Passwort eingeben.</p>
+    </div>
+    <form id="zugang-form" autocomplete="on" novalidate>
+      <label for="zugang-name">Name</label>
+      <input id="zugang-name" name="username" type="text" autocomplete="username" value="Bürokram" autocapitalize="off" spellcheck="false">
+      <label for="zugang-passwort">Passwort</label>
+      <div class="zugang-feld">
+        <input id="zugang-passwort" name="password" type="password" autocomplete="current-password" required autocapitalize="off" spellcheck="false">
+        <button type="button" id="zugang-auge" class="zugang-auge" aria-pressed="false" aria-label="Passwort anzeigen"></button>
+      </div>
+      <p id="zugang-fehler" class="zugang-fehler" role="alert" hidden></p>
+      <button type="submit" id="zugang-los" class="zugang-los">Öffnen</button>
+    </form>
+  </main>
+  <p id="zugang-laedt" class="zugang-laedt" role="status">Einen Moment …</p>
+  <noscript><p class="zugang-laedt">Bürokram braucht JavaScript.</p></noscript>
+</body>
+</html>

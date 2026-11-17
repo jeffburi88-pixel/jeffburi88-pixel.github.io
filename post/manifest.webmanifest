@@ -1,0 +1,16 @@
+{
+  "name": "Bürokram",
+  "short_name": "Bürokram",
+  "description": "Post fotografieren, verstehen, ablegen. Alles bleibt auf diesem Gerät.",
+  "lang": "de-CH",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#F6EFE6",
+  "theme_color": "#F6EFE6",
+  "icons": [
+    { "src": "symbol/symbol-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "symbol/symbol-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}

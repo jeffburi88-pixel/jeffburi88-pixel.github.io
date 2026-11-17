@@ -1,0 +1,34 @@
+/* Sperrseite (web/zugang/index.html). Farben wie die App (Shared/Palette.swift, hell): Papier, Tinte, Akzent. */
+:root {
+  --z-papier: #F6EFE6;
+  --z-karte: #FFFDF9;
+  --z-tinte: #2A211C;
+  --z-leise: #79695E;
+  --z-akzent: #B24D1C;
+  --z-mahnung: #BC382A;
+  color-scheme: light;
+}
+html, body { margin: 0; background: var(--z-papier); color: var(--z-tinte); }
+body { font-family: -apple-system, system-ui, "Segoe UI", Roboto, sans-serif; -webkit-text-size-adjust: 100%; }
+[hidden] { display: none !important; }
+.zugang { min-height: 100dvh; box-sizing: border-box; padding: max(48px, env(safe-area-inset-top)) 24px 32px;
+  max-width: 440px; margin: 0 auto; display: flex; flex-direction: column; gap: 28px; }
+.zugang-kopf { display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center; margin-top: 6vh; }
+.zugang-kopf img { border-radius: 16px; }
+.zugang-kopf h1 { margin: 0; font-size: 2rem; font-weight: 600; }
+.zugang-kopf p { margin: 0; font-size: 1rem; color: var(--z-leise); }
+#zugang-form { display: flex; flex-direction: column; gap: 8px; background: var(--z-karte); border-radius: 22px; padding: 20px; }
+.zugang label { font-size: 0.9375rem; font-weight: 600; margin-top: 8px; }
+.zugang input { font: inherit; font-size: 1.0625rem; color: inherit; background: var(--z-papier); border: 1px solid rgba(42, 33, 28, 0.18);
+  border-radius: 14px; padding: 14px; width: 100%; box-sizing: border-box; min-height: 48px; }
+.zugang input:focus-visible, .zugang button:focus-visible { outline: 2px solid var(--z-akzent); outline-offset: 2px; }
+.zugang-feld { position: relative; }
+.zugang-feld input { padding-right: 52px; }
+.zugang-auge { position: absolute; right: 0; top: 0; width: 48px; height: 100%; min-height: 44px; border: 0;
+  background: none; color: var(--z-tinte); display: flex; align-items: center; justify-content: center; cursor: pointer; }
+.zugang-auge svg { width: 22px; height: 22px; }
+.zugang-fehler { margin: 4px 0 0; font-size: 1rem; color: var(--z-mahnung); font-weight: 600; }
+.zugang-los { margin-top: 16px; font: inherit; font-weight: 600; font-size: 1.0625rem; color: #FFFFFF;
+  background: var(--z-akzent); border: 0; border-radius: 16px; padding: 14px; min-height: 48px; cursor: pointer; }
+.zugang-los[disabled] { opacity: 0.6; }
+.zugang-laedt { text-align: center; margin: 30vh 24px 0; color: var(--z-leise); font-size: 1rem; }
