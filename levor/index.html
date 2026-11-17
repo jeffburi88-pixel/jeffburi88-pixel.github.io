@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="de-CH" data-modus="zugang">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <!-- Nur eigene Dateien. Der Inhalt liegt verschlüsselt in inhalt.bin und wird erst nach dem Passwort als Blob geladen. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' blob:; style-src 'self' blob: 'unsafe-inline'; img-src 'self' blob: data:; media-src 'self' blob:; connect-src 'self'; worker-src 'self'; manifest-src 'self'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="no-referrer">
+  <!-- Die Seite soll nicht gefunden werden: Suchmaschinen sollen sie weder aufnehmen noch Links folgen. -->
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#F7F0EA" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#120A19" media="(prefers-color-scheme: dark)">
+  <title>Levor</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="symbol/levor-192.png">
+  <link rel="apple-touch-icon" href="symbol/levor-192.png">
+  <link rel="stylesheet" href="zugang.css">
+  <script src="zugang.js" defer></script>
+</head>
+<body>
+  <main id="zugang" class="zugang" hidden>
+    <div class="zugang-kopf">
+      <img src="symbol/levor-192.png" alt="" width="72" height="72">
+      <h1>Levor</h1>
+      <p id="zugang-hinweis"></p>
+    </div>
+    <form id="zugang-form" autocomplete="on" novalidate>
+      <label for="zugang-name" id="zugang-name-label"></label>
+      <input id="zugang-name" name="username" type="text" autocomplete="username" value="Levor" autocapitalize="off" spellcheck="false">
+      <label for="zugang-passwort" id="zugang-passwort-label"></label>
+      <div class="zugang-feld">
+        <input id="zugang-passwort" name="password" type="password" autocomplete="current-password" required autocapitalize="off" spellcheck="false">
+        <button type="button" id="zugang-auge" class="zugang-auge" aria-pressed="false"></button>
+      </div>
+      <p id="zugang-fehler" class="zugang-fehler" role="alert" hidden></p>
+      <button type="submit" id="zugang-los" class="zugang-los"></button>
+    </form>
+  </main>
+  <div id="app"></div>
+  <noscript>Levor braucht JavaScript.</noscript>
+</body>
+</html>

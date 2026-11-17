@@ -1,0 +1,33 @@
+/* Zugangsseite der Web-Testfassung. Farben: Platzhalter in doppelten geschweiften Klammern, tools/build_web.py setzt sie aus Shared/Palette.swift ein. */
+:root {
+  --z-grund: #F7F0EA;
+  --z-text: #1E1424;
+  --z-feld: rgba(30, 20, 36, 0.08);
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --z-grund: #120A19; --z-text: #F6ECE2; --z-feld: rgba(246, 236, 226, 0.14); }
+}
+html, body { margin: 0; background: var(--z-grund); color: var(--z-text); }
+.zugang { font-family: -apple-system, system-ui, "Segoe UI", Roboto, sans-serif; -webkit-text-size-adjust: 100%; }
+[hidden] { display: none !important; }
+.zugang { min-height: 100dvh; box-sizing: border-box; padding: max(48px, env(safe-area-inset-top)) 24px 32px;
+  max-width: 440px; margin: 0 auto; display: flex; flex-direction: column; gap: 28px; }
+.zugang-kopf { display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center; margin-top: 6vh; }
+.zugang-kopf img { border-radius: 16px; }
+.zugang-kopf h1 { margin: 0; font: 300 2rem/1.2 ui-serif, "New York", "Noto Serif", Georgia, serif; letter-spacing: 0.04em; }
+.zugang-kopf p { margin: 0; font-size: 0.9375rem; opacity: 0.75; }
+#zugang-form { display: flex; flex-direction: column; gap: 8px; }
+.zugang label { font-size: 0.8125rem; font-weight: 600; opacity: 0.75; margin-top: 8px; }
+.zugang input { font: inherit; font-size: 1.0625rem; color: inherit; background: var(--z-feld); border: 0; border-radius: 14px;
+  padding: 14px; width: 100%; box-sizing: border-box; }
+.zugang input:focus-visible, .zugang button:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
+.zugang-feld { position: relative; }
+.zugang-feld input { padding-right: 52px; }
+.zugang-auge { position: absolute; right: 0; top: 0; width: 48px; height: 100%; min-height: 44px; border: 0;
+  background: none; color: inherit; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+.zugang-auge svg { width: 22px; height: 22px; }
+.zugang-fehler { margin: 4px 0 0; font-size: 0.9375rem; }
+.zugang-los { margin-top: 16px; font: inherit; font-weight: 600; font-size: 1.0625rem; color: var(--z-grund);
+  background: var(--z-text); border: 0; border-radius: 16px; padding: 14px; min-height: 48px; cursor: pointer; }
+.zugang-los[disabled] { opacity: 0.6; }
